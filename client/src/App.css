@@ -1,0 +1,122 @@
+/*Matitaviola   WEB APP I  A.A. 2022/23 */
+
+/* Global */
+.vheight-100 {
+  min-height: 100vh;
+}
+
+.btn-primary{
+  background-color: rgb(145, 38, 104);
+  border-color: rgb(145, 38, 104);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /*Border shadow on left and bottom sides*/
+}
+.btn-primary:hover{
+  background-color: rgb(128, 0, 79);
+  border-color: rgb(145, 38, 104);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /*Border shadow on left and bottom sides*/
+}
+/* Styles related to NavBar */
+.navbar-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+  
+.below-nav {
+padding-top: 3rem;
+}
+
+.my-navbar-color{
+    background-color: rgb(128, 0, 79);
+}
+
+ /*styles related to login*/
+.log-below-nav {
+  padding-top: 5rem;
+}
+.my-login-form{
+  background-color: rgb(142, 73, 116);
+  border-radius: 5px;
+  color: white;
+  margin: auto;
+}
+
+/*styles related to title*/
+.my-title-form{
+  background-color: rgb(164, 46, 119);
+  border-radius: 5px;
+  color: white;
+}
+
+/*styles related to page list*/
+.my-list-element{
+  border-radius: 10px;
+  background-color: #f1f1f19f;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /*Border shadow on left and bottom sides*/
+}
+.nowrap-text { /*so that longer page titles don't go to the newline*/
+  white-space: nowrap;
+}
+
+/*edit buttons*/
+.my-danger {
+  min-width: 25%;
+  min-height: 50%;
+  background-color: #dc3545;
+  border: none;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /*Border shadow on left and bottom sides*/
+}
+.my-danger:hover {
+  min-width: 30% ;
+  background-color: #f80820;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /*Border shadow on left and bottom sides*/
+}
+
+.my-edit {
+  min-width: 25% !important;
+  min-height: 50% !important;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /*Border shadow on left and bottom sides*/
+}
+.my-edit:hover {
+  min-width: 30% !important;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /*Border shadow on left and bottom sides*/
+}
+
+.my-up {
+  min-width: 20% !important;
+  min-height: 50% !important;
+  border: none;
+  background-color: rgb(67, 176, 67);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /*Border shadow on left and bottom sides*/
+}
+.my-up:hover {
+  min-width: 30% !important;
+  background-color: rgb(67, 176, 67);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /*Border shadow on left and bottom sides*/
+}
+
+.my-down {
+  border: none;
+  min-width: 20% !important;
+  min-height: 50% !important;
+  background-color: rgb(79, 79, 59);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /*Border shadow on left and bottom sides*/
+}
+.my-down:hover {
+  min-width: 30% !important;
+  background-color: rgb(79, 79, 59);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /*Border shadow on left and bottom sides*/
+}
+
+.my-add{
+  border: none;
+  min-width: 50% !important;
+  min-height: 50% !important;
+  background-color: rgb(18, 216, 223);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /*Border shadow on left and bottom sides*/
+}
+.my-add:hover{
+  min-width: 80% !important;
+  background-color: rgb(31, 151, 206);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /*Border shadow on left and bottom sides*/
+}
+

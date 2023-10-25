@@ -1,0 +1,133 @@
+# Used for testing the API with Visual Studio Code
+
+####################Session management################
+
+## Execute Log In
+POST http://localhost:3001/api/sessions HTTP/1.1
+content-type: application/json
+{
+    "username": "amy.nistratore@mail.it",
+    "password": "admipassword"
+}
+###
+
+## Checking if user is still logged-in.
+GET http://localhost:5173/api/sessions/current HTTP/1.1
+###
+
+## Execute Log Out.
+DELETE http://localhost:5173/api/sessions/current HTTP/1.1
+###
+
+###################Title management##################
+
+## Retrieving the title.
+GET http://localhost:5173/api/title HTTP/1.1
+###
+
+## Saving the new title
+POST http://localhost:5173/api/title HTTP/1.1
+content-type: application/json
+{
+    "title": "HTTP-ed Title",
+    "author": "Amelia"
+}
+###
+
+####################Page management###################
+
+## Retrieving all the pages.
+GET http://localhost:5173/api/pages HTTP/1.1
+###
+
+## Creates a new page
+## The 'fake' id -1 is passed just to maintain coherence with the model
+POST http://localhost:5173/api/pages HTTP/1.1
+content-type: application/json
+{
+    "title":"HTTP-ed page",
+    "author":"Mattia",
+    "creationDate":"2023-06-24", 
+    "publicationDate":"2023-06-25"
+}
+###
+
+## Updates an existing page  with the passed pageID
+## creationDate can't actually be update, it's here to keep coherence with the model
+## Id has to be one already existing page in the DB 
+PUT http://localhost:5173/api/pages/1 HTTP/1.1
+content-type: application/json
+{
+    "id":1,
+    "title":"HTTP-ed updated page",
+    "author":"Mattia",
+    "creationDate":"2023-06-24", 
+    "publicationDate":"2023-06-25"
+}
+###
+
+## Retrieves the contents of the page with the passed pageID
+## pageID has to be one already existing page in the DB 
+GET http://localhost:5173/api/pages/2/contents HTTP/1.1
+###
+
+## Deletes a page with the passed pageID
+## pageID has to be one already existing page in the DB
+## Also deletes all the contents associated to that page
+DELETE http://localhost:5173/api/pages/5 HTTP/1.1
+###
+
+## Creates new contents for a page with the passed pageID
+## The contents passed in the list have "fake" ids, the true ones will be defined by the db
+POST http://localhost:5173/api/pages/24/contents HTTP/1.1
+content-type: application/json
+{
+    "contents":[{
+        "pageId":24,
+        "type":"paragraph",
+        "value":"paragraph added by http",
+        "position":5, 
+    },
+    {
+        "pageId":24,
+        "type":"image",
+        "value":"2",
+        "position":6, 
+    }]
+}
+###
+
+## Updates the contents for a page with the passed pageID
+## The contents must be present in the db
+PUT http://localhost:5173/api/pages/24/contents HTTP/1.1
+content-type: application/json
+{
+    "contents":[{
+        "id":25,
+        "pageId":24,
+        "type":"paragraph",
+        "value":"newContent",
+        "position":6, 
+    },
+    {
+        "id":26,
+        "pageId":24,
+        "type":"image",
+        "value":"0",
+        "position":5, 
+    }]
+}
+###
+
+## Removes the contents of the page with the ids passed as paramenters
+DELETE http://localhost:5173/api/pages/24/contents HTTP/1.1
+content-type: application/json
+{
+    "ids":[25,26]
+}
+###
+
+#################### Users API #################
+## Gets list of possible authors for a page edited by an admin
+GET http://localhost:5173/api/users/names HTTP/1.1
+###
